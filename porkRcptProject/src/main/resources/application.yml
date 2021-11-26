@@ -1,0 +1,25 @@
+#kafka
+spring.cloud.stream:
+  kafka:
+    binder:
+      brokers: localhost:9092
+  function:
+    definition: updateEncnPork;updateOfferPork;    
+  bindings:
+    updateEncnPork-in-0:
+      destination: pork_encn_from_porkEncnProject
+      group: pork_rcpt12
+    updateOfferPork-in-0:
+      destination: pork_offer_from_porkOfferProject
+      group: pork_rcpt12
+      
+# Database
+spring.datasource:
+ driver-class-name: oracle.jdbc.OracleDriver
+ url: jdbc:oracle:thin:@localhost:1521/SYSTEM
+ username: system
+ password: wjdgns3%%
+ 
+#server
+server:
+ port: 8080 
