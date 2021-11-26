@@ -1,0 +1,22 @@
+#kafka
+spring.cloud.stream:
+  kafka:
+    binder:
+      brokers: localhost:9092
+  function:
+    definition: porkInsert;    
+  bindings:
+    porkInsert-in-0:
+      destination: pork_insert_from_porkRcptProject
+      group: pork_encn
+      
+# Database
+spring.datasource:
+ driver-class-name: oracle.jdbc.OracleDriver
+ url: jdbc:oracle:thin:@localhost:1521/SYSTEM
+ username: system
+ password: wjdgns3%%
+ 
+#server
+server:
+ port: 8081 
